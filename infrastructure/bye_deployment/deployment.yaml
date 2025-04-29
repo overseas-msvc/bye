@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bye
+  labels:
+    app: bye
+    service: bye
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bye
+      service: bye
+  template:
+    metadata:
+      labels:
+        app: bye
+        service: bye
+    spec:
+      containers:
+      - name: bye-container
+        image: hhana982/bye:1.<version>
+        ports:
+        - containerPort: 5000
+        env: 
